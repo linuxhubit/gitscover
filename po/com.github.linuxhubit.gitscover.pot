@@ -16,19 +16,3 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: src/MainWindow.vala:47
-msgid "Light background"
-msgstr ""
-
-#: src/MainWindow.vala:48
-msgid "Dark background"
-msgstr ""
-
-#: src/MainWindow.vala:56
-msgid "License"
-msgstr ""
-
-#: src/MainWindow.vala:57
-msgid "Choose your open source project license"
-msgstr ""
