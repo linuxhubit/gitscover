@@ -1,0 +1,6 @@
+[options]
+buildtype = debug
+layout = flat
+
+[properties]
+

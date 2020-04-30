@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=License
+GenericName=License chooser
+Comment=Choose your project license
+Exec=com.github.linuxhubit.gitscover %U
+Icon=com.github.linuxhubit.gitscover
+Terminal=false
+Categories=Utility;Development;
+Keywords=license;
