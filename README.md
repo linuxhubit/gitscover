@@ -1,5 +1,5 @@
 <div align="center">
-  <!-- <img src="https://i.imgur.com/eQ4FLtV.png" width="64"> -->
+  <img src="https://raw.githubusercontent.com/linuxhubit/gitscover/master/data/icons/64/com.github.linuxhubit.gitscover.svg" width="64">
   <h1 align="center">Gitscover</h1>
   <p align="center">Discover new GitHub repositories</p>
 </div>
