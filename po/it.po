@@ -1,30 +1,31 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Italian translations for com.github.linuxhubit.gitscover package.
+# Copyright (C) 2020 THE com.github.linuxhubit.gitscover'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.linuxhubit.gitscover package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Mirko Brombin <send@mirko.pm>, 2020
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.linuxhubit.gitscover\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-01 18:09+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-05-01 18:11+0200\n"
+"Last-Translator: Mirko Brombin <send@mirko.pm>\n"
+"Language-Team: none\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: src/MainWindow.vala:73 src/MainWindow.vala:146
 msgid "Meanwhile why don't you visit our repository?"
-msgstr ""
+msgstr "Nel frattempo perché non visiti la nostra repository?"
 
 #: src/MainWindow.vala:130
 msgid "API limit exeeded."
-msgstr ""
+msgstr "Limite API raggiunto."
 
 #: src/MainWindow.vala:145
 msgid "I guess something is not working…"
-msgstr ""
+msgstr "Qualcosa è andato storto…"
