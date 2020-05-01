@@ -28,7 +28,7 @@ public class Gitscover.MainWindow : Gtk.Window
     private Gtk.LinkButton repo_link;
     private Gtk.Label repo_languages;
     private Gtk.Box main;
-    private List<unowned Json.Node> repos;
+    private Json.Array? repos = null;
 
     construct
     {
@@ -70,7 +70,7 @@ public class Gitscover.MainWindow : Gtk.Window
         repo_title = new Gtk.Label ("License");
         repo_title.get_style_context ().add_class ("repository-title");
 
-        repo_description = new Gtk.Label ("Meanwhile why don't you visit our repository?");
+        repo_description = new Gtk.Label (_("Meanwhile why don't you visit our repository?"));
         repo_description.get_style_context ().add_class ("repository-description");
 
         repo_link = new Gtk.LinkButton ("https://github.com/linuxhubit");
@@ -92,16 +92,14 @@ public class Gitscover.MainWindow : Gtk.Window
 
     private void get_random_repo ()
     {
-        string api_url = "https://api.github.com/repositories";
-
         Soup.Session session = new Soup.Session ();
-        session.user_agent = "Gitscovery-app";
+        session.user_agent = "gitscover-app";
         Soup.Message message;
         Json.Parser parser = new Json.Parser ();
 
         if(repos == null)
         {
-            message = new Soup.Message ("GET", api_url);
+            message = new Soup.Message ("GET", "https://api.github.com/repositories");
             session.send_message (message);
             if(message.status_code != 200)
             {
@@ -110,14 +108,18 @@ public class Gitscover.MainWindow : Gtk.Window
             }
             parser.load_from_data ((string) message.response_body.flatten ().data, -1);
             var root_array = parser.get_root ().get_array ();
-            repos = root_array.get_elements ();
+            repos = root_array;
         }
 
         try
         {
-            int index = Random.int_range(0, (int)repos.length);
-            var repo = repos.nth(index).data.get_object ();
-
+            int index = Random.int_range(0, (int)repos.get_length ());
+            var repo = repos.get_elements ().nth(index).data.get_object ();
+            if(repo == null)
+            {
+                show_error_generic();
+                return;
+            }
             repo_title.set_text (repo.get_string_member ("full_name"));
             repo_description.set_text (repo.get_string_member ("description"));
             repo_link.set_uri (repo.get_string_member ("html_url"));
@@ -127,25 +129,29 @@ public class Gitscover.MainWindow : Gtk.Window
             session.send_message (message);
             if(message.status_code != 200)
             {
-                repo_languages.set_text ("API limit exeeded.");
+                repo_languages.set_text (_("API limit exeeded."));
                 return;
             }
             parser.load_from_data ((string) message.response_body.flatten ().data, -1);
             var languages_array = parser.get_root ().get_object ();
             string langs = "";
-            foreach (var member in languages_array.get_members()) {
+            foreach (var member in languages_array.get_members())
+            {
                 langs += (string)member + ", ";
 	        }
             repo_languages.set_text (langs.substring(0, langs.length -2));
-
-
         }
         catch
         {
-            repo_title.set_text ("I guess something is not working...");
-            repo_description.set_text ("Meanwhile why don't you visit our repository?");
-            repo_link.set_uri ("https://github.com/linuxhubit");
-            repo_link.set_label ("https://github.com/linuxhubit");
+            show_error_generic();
         }
+    }
+
+    private void show_error_generic()
+    {
+        repo_title.set_text (_("I guess something is not working…"));
+        repo_description.set_text (_("Meanwhile why don't you visit our repository?"));
+        repo_link.set_uri ("https://github.com/linuxhubit");
+        repo_link.set_label ("https://github.com/linuxhubit");
     }
 }
