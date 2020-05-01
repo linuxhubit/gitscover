@@ -23,11 +23,12 @@ public class Gitscover.MainWindow : Gtk.Window
 {
     private Gtk.HeaderBar header_bar;
     private Gtk.Button refresh_button;
-    private Gtk.Label title;
-    private Gtk.Label description;
-    private Gtk.LinkButton link;
-    private Gtk.Label language;
+    private Gtk.Label repo_title;
+    private Gtk.Label repo_description;
+    private Gtk.LinkButton repo_link;
+    private Gtk.Label repo_languages;
     private Gtk.Box main;
+    private List<unowned Json.Node> repos;
 
     construct
     {
@@ -49,6 +50,10 @@ public class Gitscover.MainWindow : Gtk.Window
         // create refresh button
         refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic");
 
+        refresh_button.clicked.connect (() => {
+            get_random_repo ();
+        });
+
         // create header_bar and pack buttons
         header_bar = new Gtk.HeaderBar ();
         header_bar.set_title (Constants.APP_NAME);
@@ -62,25 +67,85 @@ public class Gitscover.MainWindow : Gtk.Window
         main = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
 
         // create elements for repository data
-        // TODO: populate from random github repository
-        title = new Gtk.Label ("License");
-        title.get_style_context ().add_class ("repository-title");
+        repo_title = new Gtk.Label ("License");
+        repo_title.get_style_context ().add_class ("repository-title");
 
-        description = new Gtk.Label ("An application that helps you finding the best license for your open source project");
-        description.get_style_context ().add_class ("repository-description");
+        repo_description = new Gtk.Label ("Meanwhile why don't you visit our repository?");
+        repo_description.get_style_context ().add_class ("repository-description");
 
-        link = new Gtk.LinkButton ("https://github.com/linuxhubit/license");
-        link.get_style_context ().add_class ("repository-link");
+        repo_link = new Gtk.LinkButton ("https://github.com/linuxhubit");
+        repo_link.get_style_context ().add_class ("repository-link");
 
-        language = new Gtk.Label ("Vala, Python");
-        language.get_style_context ().add_class ("repository-language");
+        repo_languages = new Gtk.Label ("");
+        repo_languages.get_style_context ().add_class ("repository-language");
 
         
-        main.add (title);
-        main.add (description);
-        main.add (link);
-        main.add (language);
+        main.add (repo_title);
+        main.add (repo_description);
+        main.add (repo_link);
+        main.add (repo_languages);
 
         add (main);
+
+        get_random_repo ();
+    }
+
+    private void get_random_repo ()
+    {
+        string api_url = "https://api.github.com/repositories";
+
+        Soup.Session session = new Soup.Session ();
+        session.user_agent = "Gitscovery-app";
+        Soup.Message message;
+        Json.Parser parser = new Json.Parser ();
+
+        if(repos == null)
+        {
+            message = new Soup.Message ("GET", api_url);
+            session.send_message (message);
+            if(message.status_code != 200)
+            {
+                repo_title.set_text ("API limit exeeded.");
+                return;
+            }
+            parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+            var root_array = parser.get_root ().get_array ();
+            repos = root_array.get_elements ();
+        }
+
+        try
+        {
+            int index = Random.int_range(0, (int)repos.length);
+            var repo = repos.nth(index).data.get_object ();
+
+            repo_title.set_text (repo.get_string_member ("full_name"));
+            repo_description.set_text (repo.get_string_member ("description"));
+            repo_link.set_uri (repo.get_string_member ("html_url"));
+            repo_link.set_label (repo.get_string_member ("html_url"));
+
+            message = new Soup.Message ("GET", repo.get_string_member ("languages_url"));
+            session.send_message (message);
+            if(message.status_code != 200)
+            {
+                repo_languages.set_text ("API limit exeeded.");
+                return;
+            }
+            parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+            var languages_array = parser.get_root ().get_object ();
+            string langs = "";
+            foreach (var member in languages_array.get_members()) {
+                langs += (string)member + ", ";
+	        }
+            repo_languages.set_text (langs.substring(0, langs.length -2));
+
+
+        }
+        catch
+        {
+            repo_title.set_text ("I guess something is not working...");
+            repo_description.set_text ("Meanwhile why don't you visit our repository?");
+            repo_link.set_uri ("https://github.com/linuxhubit");
+            repo_link.set_label ("https://github.com/linuxhubit");
+        }
     }
 }
