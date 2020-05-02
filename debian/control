@@ -14,4 +14,4 @@ Package: com.github.linuxhubit.gitscover
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: dpkg (>= 1.15.6)
-Description: Cat Facts
+Description: Find new GitHub repositories
