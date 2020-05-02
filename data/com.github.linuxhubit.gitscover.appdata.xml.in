@@ -4,33 +4,24 @@
   <id>com.github.linuxhubit.gitscover</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <name>License</name>
-  <summary>Choose your project license</summary>
+  <name>Gitscover</name>
+  <summary>Find new GitHub repositories</summary>
   <description>
-    <p>An application that helps you finding the best license for your open source project</p>
+    <p>An application that helps you finding new GitHub repositories</p>
   </description>
   <provides>
     <binary>com.github.linuxhubit.gitscover</binary>
   </provides>
   <releases> 
-      <release version="1.0.3" date="2019-12-14">
+      <release version="1.0.0" date="2020-05-01">
         <description>
-          <p>French translation by NathanBnm</p>
-          <p>Change app category</p>
-        </description>
-      </release>
-      <release version="1.0.2" date="2019-08-31">
-        <description>
-          <p>Initial release</p>
+          <p>First release</p>
         </description>
       </release>
   </releases>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/linuxhubit/license/master/data/screenshot-1.png</image>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/linuxhubit/license/master/data/screenshot-2.png</image>
+      <image>https://raw.githubusercontent.com/linuxhubit/gitscover/master/data/screenshot-1.png</image>
     </screenshot>
   </screenshots>
 
@@ -65,12 +56,12 @@
   </content_rating>
 
   <developer_name>Mirko Brombin</developer_name>
-  <url type="homepage">https://github.com/linuxhubit/license</url>
-  <url type="bugtracker">https://github.com/linuxhubit/license/issues</url>
-  <url type="help">https://github.com/linuxhubit/license</url>
+  <url type="homepage">https://github.com/linuxhubit/gitscover</url>
+  <url type="bugtracker">https://github.com/linuxhubit/gitscover/issues</url>
+  <url type="help">https://github.com/linuxhubit/gitscover</url>
   <update_contact>send@mirko.pm</update_contact>
   <custom>
-    <value key="x-appcenter-color-primary">#3278cd</value>
-    <value key="x-appcenter-color-primary-text">rgb(157, 200, 236)</value>
+    <value key="x-appcenter-color-primary">#aa5fb0</value>
+    <value key="x-appcenter-color-primary-text">#ffffff</value>
   </custom>
 </component>

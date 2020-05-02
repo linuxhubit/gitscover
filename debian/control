@@ -1,4 +1,4 @@
-Source: com.github.linuxhubit.gitscover
+Source: com.github.linuxhubit.catfacts
 Section: utils
 Priority: optional
 Maintainer: Mirko Brombin <send@mirko.pm>
@@ -10,9 +10,8 @@ Build-Depends: meson,
                valac (>= 0.26)
 
 Standards-Version: 3.9.6
-Package: com.github.linuxhubit.gitscover
+Package: com.github.linuxhubit.catfacts
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: dpkg (>= 1.15.6)
-Description: License
- Find new GitHub repositories
+Description: Cat Facts

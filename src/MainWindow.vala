@@ -99,7 +99,7 @@ public class Gitscover.MainWindow : Gtk.Window
 
         if(repos == null)
         {
-            int page = Random.int_range(0, 999999999);
+            int page = Random.int_range(0, 99999999);
             message = new Soup.Message ("GET", "https://api.github.com/repositories?since=" + page.to_string ());
             session.send_message (message);
             if(message.status_code != 200)

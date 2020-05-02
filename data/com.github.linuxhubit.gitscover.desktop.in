@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
-Name=License
-GenericName=License chooser
-Comment=Choose your project license
+Name=Gitscover
+GenericName=find git
+Comment=Discover new GitHub repositories
 Exec=com.github.linuxhubit.gitscover %U
 Icon=com.github.linuxhubit.gitscover
 Terminal=false
 Categories=Utility;Development;
-Keywords=license;
+Keywords=git;
