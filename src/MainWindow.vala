@@ -99,12 +99,12 @@ public class Gitscover.MainWindow : Gtk.Window
 
         if(repos == null)
         {
-            int page = Random.int_range(0, 999999999);
+            int page = Random.int_range(0, 99999999);
             message = new Soup.Message ("GET", "https://api.github.com/repositories?since=" + page.to_string ());
             session.send_message (message);
             if(message.status_code != 200)
             {
-                repo_title.set_text ("API limit exeeded.");
+                show_error_generic(_("API limit exeeded."));
                 return;
             }
             parser.load_from_data ((string) message.response_body.flatten ().data, -1);
@@ -114,11 +114,21 @@ public class Gitscover.MainWindow : Gtk.Window
 
         try
         {
+            if(repos == null)
+            {
+                show_error_generic(_("Repos list is null"));
+                return;
+            }
+            if(repos.get_length () == 0)
+            {
+                show_error_generic(_("Repos list is empty"));
+                return;
+            }
             int index = Random.int_range(0, (int)repos.get_length ());
             var repo = repos.get_elements ().nth(index).data.get_object ();
             if(repo == null)
             {
-                show_error_generic();
+                show_error_generic(_("I guess something is not working…"));
                 return;
             }
             repo_title.set_text (repo.get_string_member ("full_name"));
@@ -144,13 +154,13 @@ public class Gitscover.MainWindow : Gtk.Window
         }
         catch
         {
-            show_error_generic();
+            show_error_generic(_("I guess something is not working…"));
         }
     }
 
-    private void show_error_generic()
+    private void show_error_generic(string message)
     {
-        repo_title.set_text (_("I guess something is not working…"));
+        repo_title.set_text (message);
         repo_description.set_text (_("Meanwhile why don't you visit our repository?"));
         repo_link.set_uri ("https://github.com/linuxhubit");
         repo_link.set_label ("https://github.com/linuxhubit");

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.linuxhubit.gitscover\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 18:09+0200\n"
+"POT-Creation-Date: 2020-05-02 14:37+0200\n"
 "PO-Revision-Date: 2020-05-01 18:11+0200\n"
 "Last-Translator: Mirko Brombin <send@mirko.pm>\n"
 "Language-Team: none\n"
@@ -18,14 +18,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/MainWindow.vala:73 src/MainWindow.vala:146
+#: src/MainWindow.vala:73 src/MainWindow.vala:164
 msgid "Meanwhile why don't you visit our repository?"
 msgstr "Nel frattempo perché non visiti la nostra repository?"
 
-#: src/MainWindow.vala:130
+#: src/MainWindow.vala:107 src/MainWindow.vala:143
 msgid "API limit exeeded."
 msgstr "Limite API raggiunto."
 
-#: src/MainWindow.vala:145
+#: src/MainWindow.vala:119
+msgid "Repos list is null"
+msgstr "La lista repository è nulla"
+
+#: src/MainWindow.vala:124
+msgid "Repos list is empty"
+msgstr "La lista repository è vuota"
+
+#: src/MainWindow.vala:131 src/MainWindow.vala:157
 msgid "I guess something is not working…"
 msgstr "Qualcosa è andato storto…"
