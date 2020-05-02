@@ -1,4 +1,4 @@
-Source: com.github.linuxhubit.catfacts
+Source: com.github.linuxhubit.gitscover
 Section: utils
 Priority: optional
 Maintainer: Mirko Brombin <send@mirko.pm>
@@ -10,7 +10,7 @@ Build-Depends: meson,
                valac (>= 0.26)
 
 Standards-Version: 3.9.6
-Package: com.github.linuxhubit.catfacts
+Package: com.github.linuxhubit.gitscover
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: dpkg (>= 1.15.6)
