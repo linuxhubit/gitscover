@@ -27,7 +27,6 @@ com.github.linuxhubit.gitscover
 ## Installation
 
 ### From AppCenter
-Not published.
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.linuxhubit/gitscover)
 
 
