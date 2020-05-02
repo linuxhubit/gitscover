@@ -1,0 +1,3 @@
+# ignore temp and build data
+*~
+build/
