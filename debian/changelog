@@ -1,5 +1,6 @@
-com.github.linuxhubit.gitscover (1.2.1) UNSTABLE; urgency=low
+com.github.linuxhubit.gitscover (1.2.2) UNSTABLE; urgency=low
     
-  * Initial release
+  * Removed build directory
+  * Bump to 1.2.3 release for AppCenter submit
 
  -- Mirko Brombin <send@mirko.pm>  Sat, 2 May 2020 22:59:00 +0200
