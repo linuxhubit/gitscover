@@ -1,4 +1,4 @@
-com.github.linuxhubit.gitscover (1.2.2) UNSTABLE; urgency=low
+com.github.linuxhubit.gitscover (1.2.3) UNSTABLE; urgency=low
     
   * Removed build directory
   * Bump to 1.2.3 release for AppCenter submit
