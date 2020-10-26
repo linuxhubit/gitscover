@@ -1,6 +1,6 @@
-com.github.linuxhubit.gitscover (1.2.4) UNSTABLE; urgency=low
+com.github.linuxhubit.gitscover (1.2.5) UNSTABLE; urgency=low
 
-  * Fix OARS Social Info value
-  * Bump to 1.2.4 release for AppCenter submit
+  * Update screenshot for AppCenter submit
+  * Bump to 1.2.5 release for AppCenter submit
 
- -- Mirko Brombin <send@mirko.pm>  Sat, 9 May 2020 07:30:00 +0000
+ -- Mirko Brombin <send@mirko.pm>  Mon, 26 Oct 2020 15:30:00 +0000
