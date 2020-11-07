@@ -38,12 +38,16 @@ public class Gitscover.MainWindow : Gtk.Window
         var css_provider = new Gtk.CssProvider ();
 
         // custom style
-        css_provider.load_from_data(""
-            + ".repository-title { font-size: 24px; margin-top: 40px;}"
-            + ".repository-description { font-size: 15px;}"
-            + ".repository-link { font-size: 15px;}"
-            + ".repository-language { font-size: 12px;}"
-        );
+        try {
+            css_provider.load_from_data(""
+                + ".repository-title { font-size: 24px; margin-top: 40px;}"
+                + ".repository-description { font-size: 15px;}"
+                + ".repository-link { font-size: 15px;}"
+                + ".repository-language { font-size: 12px;}"
+            );
+        } catch (GLib.Error error) {
+            warning (error.message);
+        }
 
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);
 
@@ -107,7 +111,11 @@ public class Gitscover.MainWindow : Gtk.Window
                 show_error_generic(_("API limit exeeded."));
                 return;
             }
-            parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+            try {
+                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+            } catch (GLib.Error error) {
+                warning (error.message);
+            }
             var root_array = parser.get_root ().get_array ();
             repos = root_array;
         }
