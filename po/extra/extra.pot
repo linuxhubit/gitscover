@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-07 19:44+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:4
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:7
+msgid "Gitscover"
+msgstr ""
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:5
+msgid "find git"
+msgstr ""
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:6
+msgid "Discover new GitHub repositories"
+msgstr ""
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:8
+msgid "com.github.linuxhubit.gitscover"
+msgstr ""
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:11
+msgid "git;"
+msgstr ""
+
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:8
+msgid "Find new GitHub repositories"
+msgstr ""
+
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:10
+msgid "An application that helps you finding new GitHub repositories"
+msgstr ""
+
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:18
+msgid "First release"
+msgstr ""
+
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:58
+msgid "Mirko Brombin"
+msgstr ""
