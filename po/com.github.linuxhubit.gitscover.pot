@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.linuxhubit.gitscover\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-02 14:37+0200\n"
+"POT-Creation-Date: 2020-11-07 19:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.vala:73 src/MainWindow.vala:164
+#: src/Constants.vala:24
+msgid "Gitscover"
+msgstr ""
+
+#: src/Constants.vala:25
+msgid "Find new GitHub repositories"
+msgstr ""
+
+#: src/MainWindow.vala:52
+msgid "Refresh"
+msgstr ""
+
+#: src/MainWindow.vala:71
+msgid "License"
+msgstr ""
+
+#: src/MainWindow.vala:74 src/MainWindow.vala:165
 msgid "Meanwhile why don't you visit our repository?"
 msgstr ""
 
-#: src/MainWindow.vala:107 src/MainWindow.vala:143
+#: src/MainWindow.vala:108 src/MainWindow.vala:144
 msgid "API limit exeeded."
 msgstr ""
 
-#: src/MainWindow.vala:119
+#: src/MainWindow.vala:120
 msgid "Repos list is null"
 msgstr ""
 
-#: src/MainWindow.vala:124
+#: src/MainWindow.vala:125
 msgid "Repos list is empty"
 msgstr ""
 
-#: src/MainWindow.vala:131 src/MainWindow.vala:157
+#: src/MainWindow.vala:132 src/MainWindow.vala:158
 msgid "I guess something is not working…"
 msgstr ""

@@ -1,0 +1,55 @@
+# French translations for extra package.
+# Copyright (C) 2020 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Nathan Bonnemains (@NathanBnm), 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-07 19:44+0100\n"
+"PO-Revision-Date: 2020-11-07 19:27+0100\n"
+"Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:4
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:7
+msgid "Gitscover"
+msgstr "Gitscover"
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:5
+msgid "find git"
+msgstr "Découvrez git"
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:6
+msgid "Discover new GitHub repositories"
+msgstr "Découvrez de nouveaux dépôts GitHub"
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:8
+msgid "com.github.linuxhubit.gitscover"
+msgstr "com.github.linuxhubit.gitscover"
+
+#: data/com.github.linuxhubit.gitscover.desktop.in:11
+msgid "git;"
+msgstr "git;"
+
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:8
+msgid "Find new GitHub repositories"
+msgstr "Découvrez de nouveaux dépôts GitHub"
+
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:10
+msgid "An application that helps you finding new GitHub repositories"
+msgstr "Une application qui vous aide à découvrir de nouveaux dépôts GitHub"
+
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:18
+msgid "First release"
+msgstr "Première version"
+
+#: data/com.github.linuxhubit.gitscover.appdata.xml.in:58
+msgid "Mirko Brombin"
+msgstr "Mirko Brombin"

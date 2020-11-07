@@ -1,6 +1,5 @@
 project('com.github.linuxhubit.gitscover', 'vala', 'c', version: '0.1.0')
 
-
 gnome = import('gnome')
 i18n = import('i18n')
 

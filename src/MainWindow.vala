@@ -53,6 +53,7 @@ public class Gitscover.MainWindow : Gtk.Window
 
         // create refresh button
         refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic");
+        refresh_button.tooltip_text = _("Refresh");
 
         refresh_button.clicked.connect (() => {
             get_random_repo ();
@@ -71,7 +72,7 @@ public class Gitscover.MainWindow : Gtk.Window
         main = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
 
         // create elements for repository data
-        repo_title = new Gtk.Label ("License");
+        repo_title = new Gtk.Label (_("License"));
         repo_title.get_style_context ().add_class ("repository-title");
 
         repo_description = new Gtk.Label (_("Meanwhile why don't you visit our repository?"));
