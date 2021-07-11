@@ -33,7 +33,9 @@ public class Gitscover.MainWindow : Gtk.Window
     construct
     {
         // set default window size
-        set_size_request (800, 450);
+        set_size_request (650, 300);
+        set_resizable (true);
+
         var gtk_settings = Gtk.Settings.get_default ();
         var css_provider = new Gtk.CssProvider ();
 
@@ -70,6 +72,8 @@ public class Gitscover.MainWindow : Gtk.Window
 
         // create main box
         main = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+        main.set_margin_left (20);
+        main.set_margin_right (20);
 
         // create elements for repository data
         repo_title = new Gtk.Label (_("License"));
@@ -77,12 +81,15 @@ public class Gitscover.MainWindow : Gtk.Window
 
         repo_description = new Gtk.Label (_("Meanwhile why don't you visit our repository?"));
         repo_description.get_style_context ().add_class ("repository-description");
+        repo_description.set_line_wrap (true);
+        repo_description.set_width_chars (60);
 
         repo_link = new Gtk.LinkButton ("https://github.com/linuxhubit");
         repo_link.get_style_context ().add_class ("repository-link");
 
         repo_languages = new Gtk.Label ("");
         repo_languages.get_style_context ().add_class ("repository-language");
+        repo_languages.set_margin_bottom (60);
 
         
         main.add (repo_title);
